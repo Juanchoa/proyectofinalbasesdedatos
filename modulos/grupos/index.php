@@ -16,11 +16,31 @@ if ($result) {
     echo "Error en la consulta: " . $conexion->error;
 }
 
+if(isset($_GET['id'])){
+    $txtid = isset($_GET['id']) ? $_GET['id'] : "";
+    $stm = $conexion->prepare("DELETE FROM grupos WHERE ide_gru = ?");
+    $stm->bind_param("s", $txtid); // "i" indica que $txtid es un entero
+    try {
+        $stm->execute();
+        header("location:index.php");
+    } catch (mysqli_sql_exception $exception) {
+        // Capturar la excepción
+        $errorMessage = "No se puede eliminar este acudiente porque está relacionado con uno o más estudiantes.";
+        // mostrar el error
+        echo($errorMessage);
+    }
+}
+
 // Cerrar la conexión
 $conexion->close();
 ?>
  
 <?php include("../../template/header.php");?>
+
+<?php include("create.php");?>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+  Agregar grupo
+</button>
 
 <div
     class="table-responsive"
@@ -42,7 +62,10 @@ $conexion->close();
                 <td scope="row"><?php echo $grupo ['ide_gru'];?></td>
                 <td><?php echo $grupo ['cap_est_gru'];?></td>
                 <td><?php echo $grupo ['num_gra'];?></td>
-                <td> Editar|Eliminar </td>
+                <td> 
+                <a href="index.php?id=<?php echo $grupo ['ide_gru'];?>" class="btn btn-danger"> Eliminar</a>
+                <a href="editar.php?id=<?php echo $grupo ['ide_gru'];?>" class="btn btn-success"> Editar</a>
+                </td>
             </tr>
             <?php }?>
         </tbody>

@@ -58,7 +58,21 @@ if (isset($_GET['id'])) {
         }   
         else if($resultado_id->num_rows != 0){
           echo "El id especificado ya existe.";
+          
         } 
+        // Verificar campos obligatorios
+            $campos_obligatorios = array('nombre', 'apellido', 'direccion', 'idgrupo', 'idacudiente');
+            $campos_vacios = array();
+            foreach($campos_obligatorios as $campo) {
+              if(empty($_POST[$campo])) {
+                $campos_vacios[] = $campo;
+              }
+            }
+
+            if(!empty($campos_vacios)) {
+              echo "Los siguientes campos son obligatorios y no pueden estar vacíos: " . implode(', ', $campos_vacios);
+            }
+
         else {
           // El grupo existe, continuar con la inserción en la tabla estudiantes
       
@@ -88,21 +102,7 @@ if (isset($_GET['id'])) {
           exit(); // Importante para evitar que se siga ejecutando el código después de la redirección
         }
       }
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
 
 ?>
 <?php include("../../template/header.php"); ?>

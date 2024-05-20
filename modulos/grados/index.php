@@ -21,6 +21,11 @@ $conexion->close();
 ?>
  
 <?php include("../../template/header.php");?>
+<?php include("create.php");?>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+  Agregar grado
+</button>
 
 <div
     class="table-responsive"

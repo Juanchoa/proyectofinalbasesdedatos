@@ -42,7 +42,7 @@
                     <a class="nav-link" href="<?php echo $url_base;?>modulos/grupos/">Grupos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $url_base;?>modulos/profesores/">Profesores</a>
+                    <a class="nav-link" href="<?php echo $url_base;?>modulos/docentes/">Docentes</a>
                 </li>
             </ul>
         </nav>

@@ -10,22 +10,31 @@ if($_POST){
 
   // Obtener el valor del campo idgrupo del formulario
   $id = isset($_POST['id']) ? $_POST['id'] : "";
+  $numgrado = isset($_POST['num_gra']) ? $_POST['num_gra'] : "";
 
   // Verificar si existen las llaves foraneas y el id existe en la tabla grupos
 
-  $consulta_id = $conexion->prepare("SELECT ide_acu FROM acudientes WHERE ide_acu = ?");
+  $consulta_id = $conexion->prepare("SELECT ide_gru FROM grupos WHERE ide_gru = ?");
   $consulta_id->bind_param("s", $id);
   $consulta_id->execute();
   $resultado_id = $consulta_id->get_result();
-
+  
+  $consulta_grado = $conexion->prepare("SELECT num_gra FROM grados WHERE num_gra = ?");
+  $consulta_grado->bind_param("s", $numgrado);
+  $consulta_grado->execute();
+  $resultado_grado = $consulta_grado->get_result();
 
 // Verificar si se encontró el grupo
   if($resultado_id->num_rows != 0){
     echo "El id especificado ya existe.";
-  } 
-
+  }
+  if ($resultado_grado->num_rows === 0  ) {
+    // El grupo no existe, mostrar un mensaje de error o manejar la situación de alguna otra manera
+    echo "El grado especificado no existe.";
+}
+  
   // Verificar campos obligatorios
-  $campos_obligatorios = array('id', 'direccion', 'apellido', 'nombre', 'telefono', 'email');
+  $campos_obligatorios = array('id', 'capacidad', 'grado');
   $campos_vacios = array();
   foreach($campos_obligatorios as $campo) {
     if(empty($_POST[$campo])) {
@@ -42,17 +51,15 @@ if($_POST){
 
     // Obtener los valores de los otros campos del formulario
     $id = isset($_POST['id']) ? $_POST['id'] : "";
-    $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : "";
-    $apellido = isset($_POST['apellido']) ? $_POST['apellido'] : "";
-    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
-    $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : "";
-    $email = isset($_POST['email']) ? $_POST['email'] : "";
+    $capacidad = isset($_POST['capacidad']) ? $_POST['capacidad'] : "";
+    $grado = isset($_POST['grado']) ? $_POST['grado'] : "";
+    
 
     // Preparar la consulta SQL para la inserción en la tabla estudiantes
-    $stm = $conexion->prepare("INSERT INTO acudientes(ide_acu, dir_acu, ape_acu, nom_acu, tel_acu, ema_acu) VALUES(?, ?, ?, ?, ?, ?)");
+    $stm = $conexion->prepare("INSERT INTO grupos(ide_gru, cap_est_gru, num_gra) VALUES(?, ?, ?)");
 
     // Enlazar los parámetros
-    $stm->bind_param("ssssss", $id, $direccion, $apellido, $nombre, $telefono, $email);
+    $stm->bind_param("sss", $id, $capacidad, $grado);
 
     // Ejecutar la consulta
     $result = $stm->execute();
@@ -74,30 +81,22 @@ if($_POST){
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">AGREGAR ACUDIENTE </h5>
+        <h5 class="modal-title" id="exampleModalLabel">AGREGAR GRUPO </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form action="" method="post">
           <div class="modal-body">
+
             <label for="">Id</label>
             <input type="text" class="form-control" name="id" value="" placeholder="Ingresar id">
 
-            <label for="">Direccion</label>
-            <input type="text" class="form-control" name="direccion" value="" placeholder="Ingresar nombre">
+            <label for="">Capacidad de estudiantes</label>
+            <input type="text" class="form-control" name="capacidad" value="" placeholder="Ingresar nombre">
 
-            <label for="">Apellido</label>
-            <input type="text" class="form-control" name="apellido" value="" placeholder="Ingresar apellido">
-
-            <label for="">Nombre</label>
-            <input type="text" class="form-control" name="nombre" value="" placeholder="Ingresar dirección">
-
-            <label for="">Telefono</label>
-            <input type="text" class="form-control" name="telefono" value="" placeholder="Ingresar id del grupo">
-
-            <label for="">Email</label>
-            <input type="text" class="form-control" name="email" value="" placeholder="Ingresar id del acudiente">
+            <label for="">Grado</label>
+            <input type="text" class="form-control" name="grado" value="" placeholder="Ingresar el grado del grupo">
 
           </div>
           <div class="modal-footer">

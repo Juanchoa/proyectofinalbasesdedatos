@@ -13,7 +13,7 @@ if($_POST){
   $ideacudiente = isset($_POST['idacudiente']) ? $_POST['idacudiente'] : "";
   $id = isset($_POST['id']) ? $_POST['id'] : "";
 
-  // Verificar si el grupo existe en la tabla grupos
+  // Verificar si existen las llaves foraneas y el id existe en la tabla grupos
   $consulta_grupo = $conexion->prepare("SELECT ide_gru FROM grupos WHERE ide_gru = ?");
   $consulta_grupo->bind_param("s", $idgrupo);
   $consulta_grupo->execute();
@@ -41,6 +41,20 @@ if($_POST){
   else if($resultado_id->num_rows != 0){
     echo "El id especificado ya existe.";
   } 
+
+  // Verificar campos obligatorios
+  $campos_obligatorios = array('id', 'nombre', 'apellido', 'direccion', 'idgrupo', 'idacudiente');
+  $campos_vacios = array();
+  foreach($campos_obligatorios as $campo) {
+    if(empty($_POST[$campo])) {
+      $campos_vacios[] = $campo;
+    }
+  }
+
+  if(!empty($campos_vacios)) {
+    echo "Los siguientes campos son obligatorios y no pueden estar vacíos: " . implode(', ', $campos_vacios);
+  }
+
   else {
     // El grupo existe, continuar con la inserción en la tabla estudiantes
 
@@ -98,10 +112,10 @@ if($_POST){
             <input type="text" class="form-control" name="direccion" value="" placeholder="Ingresar dirección">
 
             <label for="">Id del grupo</label>
-            <input type="text" class="form-control" name="idgrupo" value="" placeholder="Ingresar ide del grupo">
+            <input type="text" class="form-control" name="idgrupo" value="" placeholder="Ingresar id del grupo">
 
             <label for="">Id del acudiente </label>
-            <input type="text" class="form-control" name="idacudiente" value="" placeholder="Ingresar ide del acudiente">
+            <input type="text" class="form-control" name="idacudiente" value="" placeholder="Ingresar id del acudiente">
 
           </div>
           <div class="modal-footer">
