@@ -12,7 +12,6 @@ if($_POST){
   $id = isset($_POST['id']) ? $_POST['id'] : "";
 
   // Verificar si existen las llaves foraneas y el id existe en la tabla grupos
-
   $consulta_id = $conexion->prepare("SELECT ide_doc FROM docentes WHERE ide_doc = ?");
   $consulta_id->bind_param("s", $id);
   $consulta_id->execute();
@@ -54,12 +53,10 @@ if($_POST){
 
         // Ejecutar la consulta
         $result = $stm->execute();
-
         // Verificar si la ejecución de la consulta fue exitosa
         if ($result === false) {
             die("Error al ejecutar la consulta: " . $stm->error);
         }
-
         // Redirigir después de la inserción
         header("location:index.php");
         exit(); // Importante para evitar que se siga ejecutando el código después de la redirección

@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Escuelita Bellavista</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -44,6 +44,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $url_base;?>modulos/docentes/">Docentes</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $url_base;?>modulos/materias/">Materias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $url_base;?>modulos/boletin/">Boletin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $url_base;?>modulos/notas/">Notas</a>
+                </li>
+
             </ul>
         </nav>
         

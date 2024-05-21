@@ -53,13 +53,13 @@ if($_POST){
     <div class="row">
         <div class="col-md-6">
             <h2>Sobre nosotros</h2>
-            <p>Bienvenido a [Nombre del Colegio], donde la excelencia educativa se fusiona con la pasión por el aprendizaje. Desde nuestra fundación, nos hemos comprometido a proporcionar una experiencia educativa integral que nutra el intelecto, fomente la creatividad y promueva los valores fundamentales del respeto, la responsabilidad y la colaboración.
+            <p>Bienvenido a Escuelita Bellavista, donde la excelencia educativa se fusiona con la pasión por el aprendizaje. Desde nuestra fundación, nos hemos comprometido a proporcionar una experiencia educativa integral que nutra el intelecto, fomente la creatividad y promueva los valores fundamentales del respeto, la responsabilidad y la colaboración.
 
-                En [Nombre del Colegio], cada alumno es considerado único y valioso. Nuestra comunidad escolar está dedicada a cultivar un ambiente inclusivo donde cada estudiante pueda prosperar y alcanzar su máximo potencial. Nuestro equipo de educadores altamente calificados está comprometido a brindar una enseñanza inspiradora y personalizada que estimule el crecimiento académico, emocional y social de cada niño.
+                En Bellavista, cada alumno es considerado único y valioso. Nuestra comunidad escolar está dedicada a cultivar un ambiente inclusivo donde cada estudiante pueda prosperar y alcanzar su máximo potencial. Nuestro equipo de educadores altamente calificados está comprometido a brindar una enseñanza inspiradora y personalizada que estimule el crecimiento académico, emocional y social de cada niño.
 
                 Nuestra visión va más allá de la mera transmisión de conocimientos; aspiramos a formar líderes del mañana, dotados de las habilidades, la confianza y la ética necesarias para enfrentar los desafíos del mundo moderno. Con un enfoque en el pensamiento crítico, la resolución de problemas y la colaboración, preparamos a nuestros estudiantes para convertirse en ciudadanos globales informados y comprometidos.
 
-                En [Nombre del Colegio], creemos en el poder transformador de la educación y nos esforzamos por crear un entorno en el que cada estudiante se sienta valorado, motivado y apoyado en su viaje hacia el éxito. Nos enorgullece ser una comunidad vibrante y diversa que celebra la singularidad de cada individuo y fomenta el respeto mutuo.
+                En Bellavista, creemos en el poder transformador de la educación y nos esforzamos por crear un entorno en el que cada estudiante se sienta valorado, motivado y apoyado en su viaje hacia el éxito. Nos enorgullece ser una comunidad vibrante y diversa que celebra la singularidad de cada individuo y fomenta el respeto mutuo.
 
                 Explora nuestro sitio web para conocer más sobre nuestra historia, nuestro currículo innovador, nuestras instalaciones de vanguardia y las numerosas oportunidades extracurriculares que ofrecemos. Te invitamos a unirte a nuestra familia en [Nombre del Colegio], donde cada día es una oportunidad para aprender, crecer y alcanzar nuevas alturas.
 
@@ -67,7 +67,17 @@ if($_POST){
         </div>
         <div class="col-md-6">
             <h2>Nuestros servicios</h2>
-            <p></p>
+            <p>Escuelita bella vista es una ins.tución educa.va ubicada en el barrio Chipre de la ciudad 
+                  de Manizales en donde se forman personas con valores, contamos con un amplio sistema 
+                  de docentes y estudiantes los cuales están divididos en una formación académica desde el 
+                  grado transición hasta grado quinto; Las materias que oriente nuestra ins.tución pueden 
+                  ser exclusivas de un solo grado académico o ser dictados en diferentes grados con 
+                  diferentes logros de aprendizaje dependiendo del mismo. Nuestro sistema de calificación 
+                  está basado en una escala de 1 a 5 en donde una nota menor a 3 es insuficiente, una igual 
+                  o inferior a 3,9 es básica y superior o igual a 4 es sobresaliente, estas notas se asignarán
+                  por el cumplimiento de logros durante los 2 semestres académicos los cuales .enen una 
+                  duración de 4 meses aprox que al culminarlos se hará la entrega en un reporte(boleNn) a 
+                  cada acudiente.</p>
         </div>
         <div class="col-md-6">
             <h2>Contáctenos</h2>
