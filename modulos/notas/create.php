@@ -10,7 +10,7 @@ if($_POST){
 
   // Obtener el valor del campo idgrupo del formulario
   $idmateria = isset($_POST['idmateria']) ? $_POST['idmateria'] : "";
-  $idestudiante = isset($_POST['idmateria']) ? $_POST['idmateria'] : "";
+  $idestudiante = isset($_POST['idestudiante']) ? $_POST['idestudiante'] : "";
 
   // Verificar si existen las llaves foraneas y el id existe en la tabla grupos
   $consulta_materia = $conexion->prepare("SELECT ide_mat FROM materias WHERE ide_mat = ?");
