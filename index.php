@@ -67,7 +67,7 @@ if($_POST){
         </div>
         <div class="col-md-6">
             <h2>Nuestros servicios</h2>
-            <p>Escuelita bella vista es una ins.tución educa.va ubicada en el barrio Chipre de la ciudad 
+            <p>Escuelita bella vista es una instítución educatíva ubicada en el barrio Chipre de la ciudad 
                   de Manizales en donde se forman personas con valores, contamos con un amplio sistema 
                   de docentes y estudiantes los cuales están divididos en una formación académica desde el 
                   grado transición hasta grado quinto; Las materias que oriente nuestra ins.tución pueden 
@@ -75,8 +75,8 @@ if($_POST){
                   diferentes logros de aprendizaje dependiendo del mismo. Nuestro sistema de calificación 
                   está basado en una escala de 1 a 5 en donde una nota menor a 3 es insuficiente, una igual 
                   o inferior a 3,9 es básica y superior o igual a 4 es sobresaliente, estas notas se asignarán
-                  por el cumplimiento de logros durante los 2 semestres académicos los cuales .enen una 
-                  duración de 4 meses aprox que al culminarlos se hará la entrega en un reporte(boleNn) a 
+                  por el cumplimiento de logros durante los 2 semestres académicos los cuales tíenen una 
+                  duración de 4 meses aprox que al culminarlos se hará la entrega en un reporte(boletín) a 
                   cada acudiente.</p>
         </div>
         <div class="col-md-6">
